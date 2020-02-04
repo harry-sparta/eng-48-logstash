@@ -1,0 +1,20 @@
+# Logstash configuration
+## Order of communitcations:  Filebeat > Logstash > Elasticsearch > Kibana
+## Inputs - outputs from filebeat
+## Outputs - inputs for elasticsearch
+
+input {
+  beats {
+    port => 5044
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["localhost:9200"]
+    sniffing => true
+    manage_template => false
+    index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+    document_type => "%{[@metadata][type]}"
+  }
+}
