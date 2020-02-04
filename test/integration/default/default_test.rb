@@ -10,7 +10,22 @@ unless os.windows?
   end
 end
 
+describe package 'logstash' do
+  it { should be_installed }
+  its("version"){ should match /2\./}
+end
+
 # This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+describe service 'logstash' do
+  it { should be_running }
+  it { should be_enabled }
+end
+
+# This is an example test, replace it with your own test.
+describe port(5044) do
+  it { should be_listening }
+end
+
+describe port(9200) do
+  it { should be_listening }
 end

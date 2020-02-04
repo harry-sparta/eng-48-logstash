@@ -60,6 +60,7 @@ end
 template '/etc/logstash/conf.d/logstash.conf.erb' do
   source 'logstash.conf.erb'
   action :create
+  mode :777
 end
 
 # -- Restarting Logstash service -------------------------------

@@ -3,12 +3,17 @@
 ## Inputs - outputs from filebeat
 ## Outputs - inputs for elasticsearch
 
+# Inputs
 input {
   beats {
     port => 5044
   }
 }
 
+# Filter
+# Not yet set.
+
+# Outputs
 output {
   elasticsearch {
     hosts => ["localhost:9200"]

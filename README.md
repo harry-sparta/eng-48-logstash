@@ -2,7 +2,7 @@
 This cookbook provides the provisioning and configuration for Logstash as one of four components of ELK Stack.
 
 ## Installation
-- Java.
+- Java
 - Logstash
 
 ## Configuration
