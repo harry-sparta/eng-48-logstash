@@ -22,7 +22,7 @@ end
 
 # -- Logstash install-------------------------------------------
 # Sourcelist. Import public key as logstash
-execute 'logstash_wget_key' do
+execute 'logstash_wget' do
   command 'sudo wget https://download.elastic.co/logstash/logstash/packages/debian/logstash_2.3.4-1_all.deb'
   action :run
 end
@@ -57,10 +57,10 @@ directory '/etc/logstash/' do
   action :create
 end
 
-template '/etc/logstash/conf.d/logstash.conf.erb' do
+template '/etc/logstash/conf.d/logstash.conf' do
   source 'logstash.conf.erb'
   action :create
-  mode :777
+  mode '777'
 end
 
 # -- Restarting Logstash service -------------------------------

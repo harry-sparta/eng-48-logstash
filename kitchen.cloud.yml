@@ -8,7 +8,7 @@ driver:
   subnet_ip: subnet-0e9b6138ff1ce18f2
   associate_public_ip: true
   aws_ssh_key_id: harry-li-eng48-first-key
-  security_group_ids: [sg-09e27097d9cea5a79, sg-01f499b1214c67e6a, sg-092345ae2806da610]
+  security_group_ids: [sg-02efb3f133af63d2f]
 
 transport:
   ssh_key: ~/.ssh/harry-li-eng48-first-key.pem
