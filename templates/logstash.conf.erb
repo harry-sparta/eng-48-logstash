@@ -25,7 +25,7 @@ filter {
 # Outputs
 output {
   elasticsearch {
-    hosts => ["63.33.55.204:9200"]
+    hosts => ["10.0.6.5:9200"]
     index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
     document_type => "%{[@metadata][type]}"
   }
